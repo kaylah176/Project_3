@@ -93,24 +93,10 @@ def main():
     photos = photos.json()
     photos = json.dumps(photos)
     photos = pd.read_json(photos)
-    print(photos)
-    photos_saved = open_json_file(photos)
+    photos.to_csv("Photos_csv_Saved.csv")
 
     # NOTE: put everything into a df
-    # respdf = createdf(resp)
-    # photos_df = createdf(photos)
 
-    # NOTE: Put everything into a JSON 
-    # respdf.to_csv("House_prices.csv")
-    # file_name = resp.json()
-
-    # photos_df_json = save_file_json(photos.json(), "home_desc.json_zillow")
-    
-    # NOTE: 1) Reads the lcoal file data_zillow.json). You can comment this out
-    # json_file_downloaded = "data_zillow.json"
-
-    # NOTE: 2) instead of 'json_file_downloaded', use the variable that has the JSON file stored in it
-    #df = pd.read_json(json_file_downloaded)
     df = pd.read_json(house_prices)
 
     # NOTE: Allows you to access key-value pairs in the JSON (so it behaves like a dictionary)
@@ -138,7 +124,7 @@ def main():
     # NOTE: You can rename this anything. Replaced "Value" with "Real-Estate-Return, used as the column head on the DataFrame"
     real_estate = "Real-Estate Return"
     dfc = rename(dfc,"value" ,real_estate)
-    #print(dfc)
+    # print(dfc)
 
     # NOTE: gets the most recent house value and prints it out 
     most_recent_price = df.tail(1)
