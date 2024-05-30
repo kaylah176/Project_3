@@ -5,6 +5,5 @@ Project 3: Tokenization and Real Estate is an MVP which does the following: Enab
 Private-Equity transactions in general take time, energy, effort, and documentation between financial institutions to enable transition between sellers to potential buyers. 
 
 ### The Solution: 
-Our process aims to cut out the bureaucracy when conducting private-equity like transactions. For our example, we chose real-estate as our example to showcase the simplicity to provide investors the ability to purchase or sell fractional shares (via 
+Our process aims to cut out the bureaucracy when conducting private-equity like transactions. For our example, we chose real-estate as our example to showcase the simplicity to provide investors the ability to purchase or sell houses as NFT. 
 
-access to asset-prices (extracted from Zillow's Zestimate) and historical asset-prices to track the cumulative returns of the asset marked-to-market quarterly. 
