@@ -32,6 +32,9 @@ def photos_api_caller():
     response = requests.get(url, headers = headers, params = querystring)
     return response
 
+# def asset_information():
+
+
 def createdf(file):
     df = pd.DataFrame(file)
     return df
@@ -81,19 +84,68 @@ def sets_date(ys,ms,ds, ye,me,de):
     end = dt.date(ye,me,de)
     return start, end
 
-# def dataset_call(data_name, data_source, start, end, part):
+def extract_url_df(df):
+    df_links = pd.DataFrame()
+    for item in df:
+        if isinstance(item, list):
+            for sub_item in item:
+                df_i = pd.DataFrame(sub_item, index = [0])
+                df_links = pd.concat([df_links, df_i], ignore_index = True)
+    return df_links
 
-def main():
+def high_def_pix(df):
+    df = df.set_index("width")
+    df.index = df.index.astype(int)
+    filtered_df = df[df.index >= 1000]
+    return filtered_df
+
+def call_photos():
+    # NOTE: Calls Photos_api
+    photos = photos_api_caller()
+
+    # NOTE: Converts to JSON()
+    photos = photos.json()
+    
+    # NOTE: Convert python object to a JSON String (see sources)
+    photos = json.dumps(photos)
+
+    # NOTE: reads JSON 
+    photos = pd.read_json(photos)
+
+    # NOTE: Normalizes the json file, and only extracts "photos"
+    photos = normalize(photos, "photos")    
+
+    # NOTE: Pulls out only JPEG links
+    jpeg = photos["mixedSources.jpeg"]
+
+    # NOTE: converts this into a dataframe
+    df = pd.DataFrame(jpeg)
+
+    # NOTE: Extracts the "mixedsources.jpeg column"
+    photos_df = df["mixedSources.jpeg"] #[0]
+
+    # NOTE: Extracts out the URL and organizes it into a dataframe to read, filter through 
+    photos_df = extract_url_df(photos_df)
+
+    # NOTE: Filters out every and all photos that are "low def"
+    photos_df = high_def_pix(photos_df)
+    
+    return photos_df
+
+
+def call_house_prices():
     # NOTE: Calls in our Rapid_API 
     house_prices = rapid_api_caller()
     house_prices = house_prices.json()
     house_prices = json.dumps(house_prices)
 
-    photos = photos_api_caller()
-    photos = photos.json()
-    photos = json.dumps(photos)
-    photos = pd.read_json(photos)
-    photos.to_csv("Photos_csv_Saved.csv")
+    # photos = photos_api_caller()
+    # photos = photos.json()
+    # photos = json.dumps(photos)
+    # photos = pd.read_json(photos)
+
+    # photos_normalized = normalize(photos, "photos")
+    # print(photos_normalized)
 
     # NOTE: put everything into a df
 
@@ -126,6 +178,8 @@ def main():
     dfc = rename(dfc,"value" ,real_estate)
     # print(dfc)
 
+    investment_return_asset = dfc
+
     # NOTE: gets the most recent house value and prints it out 
     most_recent_price = df.tail(1)
     #print(most_recent_price)
@@ -137,6 +191,13 @@ def main():
 # https://www.squash.io/how-to-convert-json-to-csv-in-python/ 
 # https://www.zillow.com/homes/181-Fremont-St-.num.63A-San-Francisco,-CA-94105_rb/249664766_zpid/
 
+    return most_recent_price, investment_return_asset
+
+
+def main():
+    # most_recent_price, investment_return = call_house_prices()
+    photos = call_photos()
+    print(photos)
+    
+
 main()
-
-
