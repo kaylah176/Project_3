@@ -8,7 +8,7 @@ import hvplot.pandas
 import statsmodels.api as sm
 import pandas_datareader.famafrench as ff
 import hvplot.pandas
-import datetime as dt
+import datetime as dt 
 
 def rapid_api_caller(): 
     url = "https://zillow56.p.rapidapi.com/zestimate_history"
@@ -81,11 +81,11 @@ def sets_date(ys,ms,ds, ye,me,de):
     end = dt.date(ye,me,de)
     return start, end
 
-def dataset_call(data_name, data_source, start, end, part):
+# def dataset_call(data_name, data_source, start, end, part):
 
 def main():
-    # NOTE: API Caller
-    # resp = rapid_api_caller()
+    # NOTE: Calls in our Rapid_API 
+    # house_prices = rapid_api_caller()
     # photos = photos_api_caller()
 
     # NOTE: put everything into a df
@@ -99,48 +99,49 @@ def main():
 
     # photos_df_json = save_file_json(photos.json(), "home_desc.json_zillow")
     
-    json_file_downloaded = "data.json_zillow"
-    file = open_json_file(json_file_downloaded)
+    # NOTE: 1) Reads the lcoal file data_zillow.json). You can comment this out
+    json_file_downloaded = "data_zillow.json"
 
-
-    
+    # NOTE: 2) instead of 'json_file_downloaded', use the variable that has the JSON file stored in it
     df = pd.read_json(json_file_downloaded)
 
-
-    real_estate = "Real-Estate Return"
-
+    # NOTE: Allows you to access key-value pairs in the JSON (so it behaves like a dictionary)
     df = normalize(df,"data")
+
+    # NOTE: Set's index as date  
     df = set_i(df, "date")
+
+    # NOTE: Drops the timestamp 
     df = df.drop(columns = ["timestamp"])
+
+    # NOTE: Converts the index (Date) into Date.time format
     df = set_dates(df)
+    
+    # NOTE: Cleans up the date_index (by removing the hours)
     df = date_index(df)
-    df = pct(df)
-    dfc = cumulative(df)
-    dfc = rename(dfc, real_estate)
+
+    # NOTE: pct allows us to calculate the monthly returns from the beginning 
+    dfpct= pct(df)
+
+    # NOTE: cumulative allows us to calculate the cumulative returns year-over-year
+    dfc = cumulative(dfpct)
     print(dfc)
-    
 
+    # NOTE: You can rename this anything. Replaced "Value" with "Real-Estate-Return, used as the column head on the DataFrame"
+    real_estate = "Real-Estate Return"
+    dfc = rename(dfc,"value" ,real_estate)
+    print(dfc)
 
-
-
-    
-    # recent = df["data"].tail(1)
-    # print(recent["date"])
-    # r = pd.DataFrame(recent)
-    # print(r)
-
-
-
-
-    # df = createdf(file_name)
-    # df.to_csv("Output.csv", index = False)
-    # print(resp.json())
-# https://www.zillow.com/homes/181-Fremont-St-.num.63A-San-Francisco,-CA-94105_rb/249664766_zpid/
+    # NOTE: gets the most recent house value and prints it out 
+    most_recent_price = df.tail(1)
+    print(most_recent_price)
 
 # Sources: 
 # https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file 
 # https://rapidapi.com/tvhaudev/api/zillow-base1 
 # https://www.squash.io/how-to-convert-json-to-csv-in-python/ 
+# https://www.zillow.com/homes/181-Fremont-St-.num.63A-San-Francisco,-CA-94105_rb/249664766_zpid/
 
 main()
+
 
