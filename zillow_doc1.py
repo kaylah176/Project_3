@@ -96,7 +96,8 @@ def extract_url_df(df):
 def high_def_pix(df):
     df = df.set_index("width")
     df.index = df.index.astype(int)
-    filtered_df = df[df.index >= 1000]
+    max_width = df.index.max()
+    filtered_df = df[df.index == max_width]
     return filtered_df
 
 def call_photos():
@@ -136,19 +137,14 @@ def call_photos():
 def call_house_prices():
     # NOTE: Calls in our Rapid_API 
     house_prices = rapid_api_caller()
+
+    # NOTE: Converts it as JSON() file
     house_prices = house_prices.json()
+
+    # NOTE: Json.dumps():
     house_prices = json.dumps(house_prices)
 
-    # photos = photos_api_caller()
-    # photos = photos.json()
-    # photos = json.dumps(photos)
-    # photos = pd.read_json(photos)
-
-    # photos_normalized = normalize(photos, "photos")
-    # print(photos_normalized)
-
     # NOTE: put everything into a df
-
     df = pd.read_json(house_prices)
 
     # NOTE: Allows you to access key-value pairs in the JSON (so it behaves like a dictionary)
@@ -165,6 +161,7 @@ def call_house_prices():
     
     # NOTE: Cleans up the date_index (by removing the hours)
     df = date_index(df)
+    
 
     # NOTE: pct allows us to calculate the monthly returns from the beginning 
     dfpct= pct(df)
@@ -174,30 +171,44 @@ def call_house_prices():
     #print(dfc)
 
     # NOTE: You can rename this anything. Replaced "Value" with "Real-Estate-Return, used as the column head on the DataFrame"
-    real_estate = "Real-Estate Return"
+    real_estate = "Real-Estate-Returns (rebased to $1)"
     dfc = rename(dfc,"value" ,real_estate)
     # print(dfc)
 
     investment_return_asset = dfc
+    asset_price_historical = df
 
     # NOTE: gets the most recent house value and prints it out 
     most_recent_price = df.tail(1)
-    #print(most_recent_price)
-    #print(df)
 
+    house_price_num = 0
+    for i in most_recent_price["value"]:
+        house_price_num += i
 # Sources: 
 # https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file 
 # https://rapidapi.com/tvhaudev/api/zillow-base1 
 # https://www.squash.io/how-to-convert-json-to-csv-in-python/ 
 # https://www.zillow.com/homes/181-Fremont-St-.num.63A-San-Francisco,-CA-94105_rb/249664766_zpid/
 
-    return most_recent_price, investment_return_asset
+    return most_recent_price, investment_return_asset, asset_price_historical, house_price_num
 
 
 def main():
-    # most_recent_price, investment_return = call_house_prices()
+    most_recent_price, investment_return, asset_price_hist ,value_of_asset = call_house_prices()
     photos = call_photos()
-    print(photos)
+    print("Value of real-estate: ", value_of_asset)
     
+    print("Asset Prices Historicals")
+    print(asset_price_hist)
+
+    print("Investment Return")
+    print(investment_return)
+
+    print("Most recent price data")
+    print(most_recent_price)
+
+    print("High-Def photos")
+    print(photos)
+    photos.to_csv("CSV_photos.csv")
 
 main()
