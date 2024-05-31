@@ -1,14 +1,12 @@
 
 import requests
 import json
-import csv
 import pandas as pd 
 import numpy as np
-import hvplot.pandas
-# import statsmodels.api as sm
-# import pandas_datareader.famafrench as ff
-import hvplot.pandas
 import datetime as dt 
+from io import StringIO
+
+
 
 def rapid_api_caller(): 
     url = "https://zillow56.p.rapidapi.com/zestimate_history"
@@ -23,7 +21,7 @@ def rapid_api_caller():
 
 def photos_api_caller():
     url = "https://zillow56.p.rapidapi.com/photos"
-    querystring = {"zpid":"15302053"}
+    querystring = {"zpid":"15302053"} 
 
     headers = {
 	"X-RapidAPI-Key": "2315539591msh7278b70970d7d2dp1a485ajsnf96560e49b39",
@@ -32,24 +30,25 @@ def photos_api_caller():
     response = requests.get(url, headers = headers, params = querystring)
     return response
 
-# def asset_information():
 
+def get_property_details():
+    url = "https://zillow56.p.rapidapi.com/search_address"
+    querystring = {"address": "15302053"}
+    headers = {
+        "X-RapidAPI-Key": "2315539591msh7278b70970d7d2dp1a485ajsnf96560e49b39",
+        "X-RapidAPI-Host": "zillow56.p.rapidapi.com"
+    }
+    try:
+        response = requests.get(url, headers=headers, params=querystring)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        return None
 
 def createdf(file):
     df = pd.DataFrame(file)
     return df
 
-def save_file_json(file, name): 
-    with open(name,'w') as f:
-        json.dump(file, f)
-
-
-# Replace 'path/to/your/file.json' with the actual file path
-def open_json_file(file_path):
-# Open and read the JSON file
-    with open(file_path, 'w') as file:
-        data = json.load(file)
-    return data
 
 def normalize(df,column):
     normalized_df = pd.json_normalize(df[column])
@@ -79,11 +78,6 @@ def rename(df, old,new):
     df = df.rename(columns = {old:new})
     return df
 
-def sets_date(ys,ms,ds, ye,me,de):
-    start = dt.date(ys,ms,ds)
-    end = dt.date(ye,me,de)
-    return start, end
-
 def extract_url_df(df):
     df_links = pd.DataFrame()
     for item in df:
@@ -99,6 +93,17 @@ def high_def_pix(df):
     max_width = df.index.max()
     filtered_df = df[df.index == max_width]
     return filtered_df
+
+def call_details():
+    data = get_property_details()
+    zestimate_current = data['onsiteMessage']['messages'][0]['decisionContext']['zestimate']
+    hoa_fees = data['resoFacts']['hoaFee']
+    tax_annual = data['resoFacts']['taxAnnualAmount']
+    description = data['description']
+    year_built = data['resoFacts']['yearBuilt']
+
+    return zestimate_current, hoa_fees, tax_annual, description, year_built
+    
 
 def call_photos():
     # NOTE: Calls Photos_api
@@ -132,6 +137,7 @@ def call_photos():
     photos_df = high_def_pix(photos_df)
     
     return photos_df
+
 
 
 def call_house_prices():
@@ -196,6 +202,8 @@ def call_house_prices():
 def main():
     most_recent_price, investment_return, asset_price_hist ,value_of_asset = call_house_prices()
     photos = call_photos()
+    zestimate_current, hoa_fees, tax_annual, description, year_built = call_details()
+
     print("Value of real-estate: ", value_of_asset)
     
     print("Asset Prices Historicals")
@@ -209,5 +217,11 @@ def main():
 
     print("High-Def photos")
     print(photos)
+
+    print(zestimate_current)
+    print(hoa_fees)
+    print(tax_annual)
+    print(description)
+    print(year_built)
 
 main()
