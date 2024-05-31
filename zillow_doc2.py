@@ -41,8 +41,10 @@ def get_property_details():
     try:
         response = requests.get(url, headers=headers, params=querystring)
         response.raise_for_status()
+        # print(response.json()) 
         return response.json()
     except requests.exceptions.RequestException as e:
+        print(f"Get Property Details error: {e}")
         return None
 
 def createdf(file):
@@ -96,6 +98,7 @@ def high_def_pix(df):
 
 def call_details():
     data = get_property_details()
+
     zestimate_current = data['onsiteMessage']['messages'][0]['decisionContext']['zestimate']
     hoa_fees = data['resoFacts']['hoaFee']
     tax_annual = data['resoFacts']['taxAnnualAmount']
@@ -103,7 +106,8 @@ def call_details():
     year_built = data['resoFacts']['yearBuilt']
 
     return zestimate_current, hoa_fees, tax_annual, description, year_built
-    
+
+        
 
 def call_photos():
     # NOTE: Calls Photos_api
@@ -137,6 +141,7 @@ def call_photos():
     photos_df = high_def_pix(photos_df)
     
     return photos_df
+
 
 
 
@@ -198,30 +203,29 @@ def call_house_prices():
 
     return most_recent_price, investment_return_asset, asset_price_historical, house_price_num
 
+def json_convert(contents, filename):
+    with open(filename, 'w') as f:
+        json.dump(contents, f, indent = 2)
+    return contents
+
+def convert_list(contents, section):
+    contents = contents.reset_index()
+    section = contents[section]
+    list_1 = []
+    for link in section: 
+        list_1.append(link)
+    return list_1
+
+def photo_conversion_json(df):
+    file = convert_list(df,"url")
+    file_json = json_convert(file, "zillow_url")
+    return file_json
 
 def main():
     most_recent_price, investment_return, asset_price_hist ,value_of_asset = call_house_prices()
-    photos = call_photos()
+    photos_df = call_photos()
+    conversion = photo_conversion_json(photos_df)
     zestimate_current, hoa_fees, tax_annual, description, year_built = call_details()
 
-    print("Value of real-estate: ", value_of_asset)
-    
-    print("Asset Prices Historicals")
-    print(asset_price_hist)
-
-    print("Investment Return")
-    print(investment_return)
-
-    print("Most recent price data")
-    print(most_recent_price)
-
-    print("High-Def photos")
-    print(photos)
-
-    print(zestimate_current)
-    print(hoa_fees)
-    print(tax_annual)
-    print(description)
-    print(year_built)
 
 main()
