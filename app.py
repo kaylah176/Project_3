@@ -28,9 +28,9 @@ if st.button("Get Property Value"):
     if api_key and address:
         data = get_property_value(address, api_key)
         
-        if data:
-            st.write("Property Value Data:")
-            st.json(data)
+        # if data:
+        #     st.write("Property Value Data:")
+        #     st.json(data)
     else:
         st.warning("Please enter both the API key and property address.")
 
@@ -40,4 +40,26 @@ if st.button("Get Property Value"):
 st.divider()
 
 zestimate_current = data['onsiteMessage']['messages'][0]['decisionContext']['zestimate']
-st.write(zestimate_current)
+st.write(f"Current Zestimate: {zestimate_current}")
+hoa_fees = data['resoFacts']['hoaFee']
+st.write(f"HOA Fees: {hoa_fees}")
+tax_annual = data['resoFacts']['taxAnnualAmount']
+st.write(f"Annual Tax: {tax_annual}")
+description = data['description']
+st.write(f"Property Description: {description}")
+year_built = data['resoFacts']['yearBuilt']
+st.write(f"Year Built: {year_built}")
+living_area = data['livingArea']
+st.write(f"Living Area: {living_area} sqft")
+longitude = data['longitude']
+st.write(f"Longitude: {longitude}")
+latitude = data['latitude']
+st.write(f"Latitude: {latitude}")
+lot_size = data['lotAreaValue']
+st.write(f"Lot Size: {lot_size} sqft")
+bathrooms = data['bathrooms']
+st.write(f"Bathrooms: {bathrooms}")
+bedrooms = data['bedrooms']
+st.write(f"Bedrooms: {bedrooms}")
+
+
