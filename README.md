@@ -1,7 +1,7 @@
 # Project 3
 ## Project Overview: 
 
-Project 3: Tokenization and Real Estate is an MVP which does the following: Enables transaction of an asset as an NFT. For this Minimum-Viable-Product, we set out to enable tokenization of real-estate (pulled from Zillow RapidAPI), where investors can own partial ownership of real-estate. 
+Project 3: Tokenization and Real Estate is an MVP which does the following: Enables transaction of an asset as an NFT. For this Minimum-Viable-Product, we set out to enable tokenization of real-estate (pulled from Zillow RapidAPI), where investors can buy and sell assets as seamless as buying and selling securities on the stock market. 
 
 ## Project Overview: 
 ### The Current Problem: 
