@@ -10,6 +10,10 @@ Private-Equity transactions in general take time, energy, effort, and documentat
 ### The Solution: 
 Our process aims to cut out the bureaucracy when conducting private-equity like transactions. For our example, we chose real-estate as our example to showcase the simplicity to provide investors the ability to purchase or sell houses as NFT. 
 
-
+### Installation Instructions:
+#### Necessary Files: 
+1. Zillow_doc2.py: Contains the rapid-api callers to obtain property price and details. 
+2. App.py: Identifies property details from: Bathroom, bedroom, living area count/dimensions. This displays as a streamlit file, independent and instantly deployable.
+3. 
 
 
