@@ -11,9 +11,8 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 
 ## Installation Instructions:
 ### Necessary Files: 
-1. Zillow_doc2.py: Contains the rapid-api callers to obtain property price and details.
-2. Sreamlit3.py: 
-3. App.py: Identifies property details from: Bathroom, bedroom, living area count/dimensions. This displays as a streamlit file, independent and instantly deployable.
-4. Streamlit3.py: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price) pulled from teh Zillow_doc2.py. This
+1. **Zillow_doc2.py**: Contains the rapid-api callers to obtain property price and details.
+2. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. This displays as a streamlit file, independent and instantly deployable.
+3. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price) pulled from teh Zillow_doc2.py. This
 
 
