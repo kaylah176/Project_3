@@ -16,8 +16,18 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 3. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price) pulled from teh Zillow_doc2.py.
 4. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
 5. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
-### Steps to deploy: 
-1. 
+
+### Steps to deploy - Stage 1: 
+1. Compile the RealEstateNFT.sol and deploy it. 
+2. Compile the OwnershipToken.sol and deploy it.
+3. Pick your injected provider as Metamask, and account.
+4. Hit transact on Remix
+5. Open up Metamask and hit import: Tokens, and paste the contract asset (OWN symbol).
+6. Hit Next and hit import. This represenets 100 OWN coi.
+7. Scroll down to the two contract addresses, adn hit copy, and paste that into **App.py**. This is grabbed and pasted into the ownership_token_address and real_estate_nft address contract. 
+8. In python Terminal under **App.py** type: *streamlit run App.py*
+### RealEstate DApp - Stage 2: 
+1. Enter property price, initial purchase price, and holding company name, description ,and current property value, and hit Mint PropertyNFT 
 
 
 
