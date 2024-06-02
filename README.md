@@ -26,7 +26,10 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 7. Scroll down to the two contract addresses, adn hit copy, and paste that into **App.py**. This is grabbed and pasted into the ownership_token_address and real_estate_nft address contract. 
 8. In python Terminal under **App.py** type: *streamlit run App.py*
 ### RealEstate DApp - Stage 2: 
-1. Enter property price, initial purchase price, and holding company name, description, and current property value, and hit Mint PropertyNFT. 
+1. Enter property price, initial purchase price, and holding company name, description, and current property value, and hit Mint PropertyNFT.
+
+
+
 
 
 
