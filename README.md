@@ -11,11 +11,17 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 
 ## Installation Instructions:
 ### Neccessary Imports: 
-1. Web3
-2. Pandas
-3. JSON
-4. Streamlit
-5. 
+1. Streamlit
+2. Web3
+3. Matplotlib
+4. Math
+5. Pandas
+6. Numpy
+7. IO
+8. Request
+9. json
+10. time
+
 ### Necessary Files: 
 1. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. This displays as a streamlit file, independent and instantly deployable. 
 2. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price) pulled from teh Zillow_doc2.py.
