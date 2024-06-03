@@ -72,7 +72,7 @@ Our software can be adapted to other private-equity backed assets as our platfor
 8. UCB Fintech Bootcamp Tutor
 9. https://www.leewayhertz.com/fractionalized-nft/#:~:text=NFT%20fractionalization%20offers%20the%20same%20benefit%20to%20NFT%20investors.&text=To%20fractionalize%20an%20NFT%2C%20it,partial%20ownership%20of%20the%20NFT
 10. https://github.com/pixegami/streamlit-demo-app
-11. 
+11. https://realpython.com/intro-to-python-threading/ 
 
 
 
