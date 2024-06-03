@@ -39,7 +39,8 @@ The following videos contain detailed step by step instructions from compiling t
 3. https://youtu.be/j5mqZS82bkA: Enabling transactions between investors.
 4. https://youtu.be/nmHxF00BNPM: Real-Estate/Asset analysis to determine investment returns and valuation.
    
-## RealEstate DApp - Stage 2, Pages & Navigation: 
+## RealEstate DApp - Stage 2:
+Pages & Navigation: 
 1. **Home**
 2. **NFT Tokens & Ownership**
 3. **Real Estate Token Interface**
