@@ -57,6 +57,7 @@ Here are some basic rules:
    - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home 
 
 
+### Future Applications of Software 
 
 
 
