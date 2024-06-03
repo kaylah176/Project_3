@@ -69,7 +69,9 @@ Our software can be adapted to other private-equity backed assets as our platfor
 6. https://www.youtube.com/watch?v=GwFQg8ROZfo&t=1015s
 7. Python Instructor: Edward Rees, Adjunct Professor University of San Francisco: https://www.edwardrees.info
 8. UCB Fintech Bootcamp Tutor
-9. 
+9. https://www.leewayhertz.com/fractionalized-nft/#:~:text=NFT%20fractionalization%20offers%20the%20same%20benefit%20to%20NFT%20investors.&text=To%20fractionalize%20an%20NFT%2C%20it,partial%20ownership%20of%20the%20NFT
+10. https://github.com/pixegami/streamlit-demo-app
+11. 
 
 
 
