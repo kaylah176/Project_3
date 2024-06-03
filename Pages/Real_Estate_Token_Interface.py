@@ -17,6 +17,7 @@ import math
 from streamlit_folium import st_folium
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource, DatetimeTickFormatter, NumeralTickFormatter
+import pandas as pd
 
 
 # Zillow API Information 
@@ -201,11 +202,6 @@ def call_house_prices():
     house_price_num = 0
     for i in most_recent_price["value"]:
         house_price_num += i
-# Sources: 
-# https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file 
-# https://rapidapi.com/tvhaudev/api/zillow-base1 
-# https://www.squash.io/how-to-convert-json-to-csv-in-python/ 
-# https://www.zillow.com/homes/181-Fremont-St-.num.63A-San-Francisco,-CA-94105_rb/249664766_zpid/
 
     return most_recent_price, investment_return_asset, asset_price_historical, house_price_num
 
@@ -258,7 +254,7 @@ st.markdown("""
 """)
 
 # Tabs for different functionalities
-tab1, tab2, tab3, tab4 = st.tabs(["Real Estate Value", "Asset Photos", "Mortgage Calculator", "Real Estate Investment Analysis"])
+tab1, tab2, tab3, tab4 = st.tabs(["Real Estate Value", "Asset Photos", "Mortgage Calculator", "Real Estate Investment Sensitivity Analysis"])
 
 with tab1:
     most_recent_price, investment_return_asset,  asset_price_historical, house_price_num = call_house_prices()
@@ -273,30 +269,26 @@ with tab1:
 
     st.title("Data Visualization")
 
-        # Utilize Bokeh plotting features 
-        # Assuming asset_price_historical is already defined and loaded with a DateTime index and a 'value' column
+    # Assuming asset_price_historical is already defined and loaded with a DateTime index and a 'value' column
     source = ColumnDataSource(data={
         'date': asset_price_historical.index,
         'value': asset_price_historical['value']
     })
 
     # Create a new plot with a title and axis labels
-    p = figure(title='House Price Value over Time', x_axis_label='Date', y_axis_label='Value', x_axis_type='datetime')
+    p = figure(title='Value over Time', x_axis_label='Date', y_axis_label='Current Property Value (USD)', x_axis_type='datetime')
 
     # Add a line renderer with legend and line thickness
-    p.line(x='date', y='value', source=source, legend_label='House Value', line_width=2)
-
-    # Customizing the y-axis to display whole numbers
-    p.yaxis.formatter = NumeralTickFormatter(format='0')    
+    p.line(x='date', y='value', source=source, legend_label='Property Value', line_width=2)
 
     # Customizing the datetime format on x-axis
     p.xaxis.formatter = DatetimeTickFormatter(days=["%d %b %Y"], months=["%b %Y"], hours=["%d %b %Y %H:%M"])
 
+    # Customizing the y-axis to display whole numbers
+    p.yaxis.formatter = NumeralTickFormatter(format='0')
+
     # Streamlit function to display Bokeh chart
     st.bokeh_chart(p, use_container_width=True)
-
-
-
 
 with tab2:
     for width, url in photos_df.iterrows():
@@ -472,7 +464,6 @@ with tab4:
     ax.set_ylabel('Equity Accumulation ($)')
     ax.legend()
     st.pyplot(fig)
-
 
 
 
