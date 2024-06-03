@@ -45,7 +45,7 @@ Pages & Navigation:
 2. **NFT Tokens & Ownership**
 3. **Real Estate Token Interface**
 
-#### Navigation - Stage 
+## Navigation - Stage 3:
 To navigate through the app, use the sidebar on the left. Here are the main sections available:
 1. **Home:** You are currently here. This section provides an overview and navigation instructions.
 2. **NFT Tokens and Ownership:** This section allows you to mint an NFT that will represent the real estate property you want to invest in.
