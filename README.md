@@ -60,6 +60,15 @@ Here are some basic rules:
 
 ### Future Applications of Software 
 
+### Sources: 
+1. https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
+2. https://rapidapi.com/tvhaudev/api/zillow-base1
+3. https://www.squash.io/how-to-convert-json-to-csv-in-python/
+5. Generative AI (ChatGPT) 
+6. https://www.youtube.com/watch?v=GwFQg8ROZfo&t=1015s
+7. Python Instructor: Edward Rees, Adjunct Professor University of San Francisco: https://www.edwardrees.info
+8. 
+
 
 
 
