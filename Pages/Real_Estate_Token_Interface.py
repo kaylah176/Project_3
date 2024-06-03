@@ -1,5 +1,6 @@
 import streamlit as st
 from web3 import Web3
+import folium
 import requests
 import matplotlib.pyplot as plt
 import math 
@@ -13,6 +14,7 @@ import numpy as np
 import datetime as dt
 import time
 import math 
+from streamlit_folium import st_folium
 
 
 # Zillow API Information 
@@ -222,6 +224,25 @@ def photo_conversion_json(df):
     file = convert_list(df,"url")
     file_json = json_convert(file, "zillow_url")
     return file_json
+
+def house_map():
+    # Sample data: list of (latitude, longitude) tuples
+                    #Latitude First, Longitude Second,
+    coordinates = [(38.011734, -121.36025)]
+
+    # Calculate the center of the map as the average of the coordinates
+    map_center = [
+        sum([coord[0] for coord in coordinates]) / len(coordinates),
+        sum([coord[1] for coord in coordinates]) / len(coordinates)
+    ]
+
+    # Create a folium map centered around the calculated center
+    mymap = folium.Map(location=map_center, zoom_start=10)
+
+    # Add markers to the map
+    for coord in coordinates:
+        folium.Marker(location=coord, popup=f'Location: {coord}').add_to(mymap)
+    return mymap
   
 
 st.title("Real Estate Token Interface")
@@ -231,17 +252,17 @@ st.header("Overview")
 
 # Add a description paragraph
 st.markdown("""
-    Welcome to our Real Estate Token Interface! Section of our platform focuses on interactive tools and resources regarding the asset you are investing in.
-    Real Estate Value: An overview of the increase in the value of this home in the past ten years. 
-    Asset Photos: Photos of the home in real time that are available from Zillow. 
-    Mortgage Calculator: In relation to the value of the house, includes a repayment cycle based on your initial down payment. 
-    Real Estate Investment Analysis: This includes a 30 year cash flow and equity projections 
+    Welcome to our Real Estate Token Interface! Sections of this platform focuses on interactive tools and resources regarding the asset you are investing in.
+        **Real Estate Value:** An overview of the increase in the value of this home in the past ten years. 
+        **Asset Photos:** Photos of the home in real time that are available from Zillow. 
+        **Mortgage Calculator:** In relation to the value of the house, includes a repayment cycle based on your initial down payment. 
+        **Real Estate Investment Analysis:** This includes a 30 year cash flow and equity projections 
 """)
 
 # Tabs for different functionalities
-tab3, tab4, tab5, tab6 = st.tabs(["Real Estate Value", "Asset Photos", "Mortgage Calculator", "Real Estate Investment Analysis"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Real Estate Value", "Asset Photos", "Mortgage Calculator", "Real Estate Investment Analysis", "House Map Location"])
 
-with tab3:
+with tab1:
     most_recent_price, investment_return_asset,  asset_price_historical, house_price_num = call_house_prices()
     photos_df = call_photos()
     st.subheader("Real Estate Value")
@@ -263,11 +284,11 @@ with tab3:
     plt.xticks(rotation=45)
     st.pyplot(fig)
 
-with tab4:
+with tab2:
     for width, url in photos_df.iterrows():
         st.image(url.values[0], caption=f"Image {width}")
 
-with tab5: 
+with tab3: 
     st.title("Mortgage Repayments Calculator")
 
     st.write("### Input Data")
@@ -328,7 +349,7 @@ with tab5:
     payments_df = df[["Year", "Remaining Balance"]].groupby("Year").min()
     st.line_chart(payments_df)
 
-with tab6: 
+with tab4: 
 
     st.title("Real Estate Investment Analysis")
 
@@ -437,6 +458,17 @@ with tab6:
     ax.set_ylabel('Equity Accumulation ($)')
     ax.legend()
     st.pyplot(fig)
+
+
+with tab5:
+    st.title("Folium Map: House Location in the Central Valley")
+    st.write("This is an example of a Folium map embedded in a Streamlit app. This is the house's location in relation to other major cities in the Central Valley of California.")
+
+    # Generate the map
+    mymap = house_map()
+
+    # Display the map using streamlit_folium
+    st_folium(mymap, width=1000, height=600)
 
 
 
