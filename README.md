@@ -24,7 +24,7 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 
 ### Necessary Files: 
 1. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. This displays as a streamlit file, independent and instantly deployable. 
-2. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price) pulled from teh Zillow_doc2.py.
+2. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price) pulled from the Zillow_doc2.py.
 3. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
 4. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
 
