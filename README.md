@@ -62,7 +62,7 @@ Here are some basic rules:
 
 
 ## Future Applications of Software 
-Our software can be adapted to other private-equity backed assets as our platform effectively acts as a way to purchase and sell any security pegged to cashflows from the asset. This allows the software to tap into the speed, accessibility, and security of crypto-currency with the asset price pegged to a value deemed appropriate. For our example we used the Zillow Zestimates, we can also used a 'Discounted Cashflow Model' for buyers and sellers to find an appropriate pricing for the security. 
+Our software can be adapted to other private-equity backed assets as our platform effectively acts as a way to purchase and sell any security pegged to cashflows from the asset. This allows the software to tap into the speed, accessibility, and security of crypto-currency with the asset price pegged to a value deemed appropriate. For our example we used the Zillow Zestimates, we can also used a 'Discounted Cashflow Model' for buyers and sellers to find an appropriate pricing for their assets. Furthermore, the software could include multiple assets for buyers and sellers to interact with one another. 
 
 ## Sources: 
 1. https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
