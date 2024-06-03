@@ -9,7 +9,7 @@ This project was completed by: Jack Richey, Kayla Hoffman, Gabriel Morano, Ravi 
 Private-Equity transactions in general take time, energy, effort, and documentation between financial institutions to enable transition between sellers to potential buyers. 
 
 ### The Solution: 
-Our process aims to cut out the bureaucracy when conducting private-equity like transactions. For our example, we chose real-estate as our example to showcase the simplicity to provide investors the ability to purchase or sell houses as NFT. 
+Our process aims to cut out the bureaucracy when conducting private-equity like transactions. For our example, we chose real-estate as our example to showcase the simplicity to provide investors the ability to purchase or sell houses as NFT. For our current software, the four "investors": Kayla, Jack, Ravi, Gabriel were alloted 25 coins that represented their "shares" of the asset. For simplicity, the maximum coins an individual can own is 100 coins (which represents all coins outstanding). 
 
 
 ## Installation Instructions:
@@ -59,6 +59,7 @@ Here are some basic rules:
 
 
 ### Future Applications of Software 
+Our software can be adap
 
 ### Sources: 
 1. https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
