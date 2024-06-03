@@ -11,6 +11,7 @@ Private-Equity transactions in general take time, energy, effort, and documentat
 ### The Solution: 
 Our process aims to cut out the bureaucracy when conducting private-equity like transactions. For our example, we chose real-estate as our example to showcase the simplicity to provide investors the ability to purchase or sell houses as NFT. 
 
+
 ## Installation Instructions:
 ### Neccessary Imports: 
 1. Streamlit
