@@ -29,18 +29,26 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 ## Necessary Files:
 1. **HomePage.py**: Parent directory for the app. Contains the instructions on how to navigate across our software.
 2. **Pages Folder**:
-   - NFT_Tokens&Ownership.py: Calls in the **1** and **2** solidity files
+   - NFT_Tokens&Ownership.py: Calls in the **OwnershipToken.sol** and **RealEstateNFT.sol** solidity files
    - Real_Estate_Token_Interface.py:
       - Tab 1: Calls in the real-estate price, and asset returns (on a $ amount since inception).
       - Tab 2: Calls in photos from the Zillow API to view any and all images from the house. 
       - Tab 3: Contains mortgage calculator for investors to stress-test how applying leverage could impact their monthly payments.
       - Tab 4: Contains a more in-depth sensitivity analysis to provide investors with greater ability to make an investment decision based on stress-testing: interest-rate, vacancy, insurance costs and how that could impact the cashflows from the asset.
    - Zillow_Location.py: Map function for potential investors to view the location of the real-estate.
-   - zillow_url: Contains the url's of the photos for additional viewing 
-4. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. 
-5. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price).
-6. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
-7. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
+   - zillow_url: Contains the url's of the photos for additional viewing
+
+4. **contracts folder**:
+   - OwnershipToken.sol: Fungible token (allows the NFT to have multiple coin-holders)
+   - RealEstateNFT.sol: Non-Fungible creation which allows the creation of the house as a 1 of 1.
+      -  **compiled folder**
+         -  OwnershipToken.json: Contains the contract address for the OwnershipToken
+         -  RealEstateNFT.json: Contains the contract address for the RealEstateNFT.json
+         
+   
+   
+   **RealEstateNFT.sol**: Creates the house token to be used for transactions.
+9. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
 
 ## Steps to deploy - Stage 1:
 The following videos contain detailed step by step instructions from compiling the NFT token, connecting to Metamask, deployment of the token, transacting between investors and calculating asset returns.
