@@ -38,10 +38,10 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 7. Scroll down to the two contract addresses, adn hit copy, and paste that into **App.py**. This is grabbed and pasted into the ownership_token_address and real_estate_nft address contract. 
 8. In python Terminal under **App.py** type: *streamlit run App.py*
    
-### RealEstate DApp - Stage 2: 
-1. **HomePage**: Introduction page into our Streamlit App. 
-2. **NFT Token & Ownership**: Contract deployment, and transferring of ownership in cryptocurrency coins. 
-3. **Real Estate Token Interface**: The sidebar menu (on the left) provides you access to current real-estate value (of the asset), as well as historical returns of the real-estate. Furthermore, a built-in mortgage calculator is built in to provide investors with quick and easy access to calculate their monthly payments for the property.
+### RealEstate DApp - Stage 2: Pages Available: 
+1. **Home**
+2. **NFT Tokens & Ownership**
+3. **Real Estate Token Interface**
 
 #### Navigation - Stage 3: 
 To navigate through the app, use the sidebar on the left. Here are the main sections available:
