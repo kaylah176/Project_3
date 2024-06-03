@@ -59,9 +59,10 @@ The following videos contain detailed step by step instructions from compiling t
    
 ## RealEstate DApp - Stage 2:
 Pages & Navigation: 
-1. **Home**
-2. **NFT Tokens & Ownership**
+1. **HomePage**
+2. **NFTTokens&Ownership**
 3. **Real Estate Token Interface**
+4. **Zillow Location**
 
 ## Navigation - Stage 3:
 To navigate through the app, use the sidebar on the left. Here are the main sections available:
