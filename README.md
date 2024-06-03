@@ -24,6 +24,7 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 8. Request
 9. Json
 10. Time
+11. Threads
 
 ### Necessary Files: 
 1. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. 
