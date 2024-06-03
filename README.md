@@ -45,13 +45,13 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 #### Navigation - Stage 3: 
 To navigate through the app, use the sidebar on the left. Here are the main sections available:
 1. **Home:** You are currently here. This section provides an overview and navigation instructions.
-2. **NFT Tokens and Owernship:** This section allows you to mint an NFT that will represent the real estate property you want to invest in.
+2. **NFT Tokens and Ownership:** This section allows you to mint an NFT that will represent the real estate property you want to invest in.
 This needs to be done under a holding company, also known as an LLC. Through this, each stakeholder in the LLC has the ability to purchase or sell to others in the LLC.
 Here are some basic rules: 
 - You can only buy 25 tokens out of 100 at a time 
 - You can not sell to yourself. Only to other individuals in the LLC or back to the holding company itself
 - You can make updates to your contract's description once its deployed and even update the house's value.
-- **Real Estate Token Interface:** This gives you interactive tools and resources regarding the asset your investing in. This includes ... 
+**Real Estate Token Interface:** This gives you interactive tools and resources regarding the asset your investing in. This includes ... 
 - Real Estate Valuation Visualization (past 10 years)
 - Current Asset Photos According to Zillow 
 - Mortgate Repayments Calculator 
