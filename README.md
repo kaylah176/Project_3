@@ -31,10 +31,10 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 4. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
 
 ### Steps to deploy - Stage 1, watch the following YouTube videos in order to view compiling, and deployment of the NFT token 
-1. https://youtu.be/ViRI_zeGosQ
-2. https://youtu.be/bvUSPix2aBQ
-3. https://youtu.be/j5mqZS82bkA
-4. https://youtu.be/nmHxF00BNPM 
+1. https://youtu.be/ViRI_zeGosQ: Compiling 
+3. https://youtu.be/bvUSPix2aBQ
+4. https://youtu.be/j5mqZS82bkA
+5. https://youtu.be/nmHxF00BNPM 
    
 ### RealEstate DApp - Stage 2, Pages & Navigation: 
 1. **Home**
