@@ -15,6 +15,9 @@ import datetime as dt
 import time
 import math 
 from streamlit_folium import st_folium
+from bokeh.plotting import figure
+from bokeh.models import ColumnDataSource, DatetimeTickFormatter, NumeralTickFormatter
+import pandas as pd
 
 
 # Zillow API Information 
@@ -247,15 +250,11 @@ st.header("Overview")
 
 # Add a description paragraph
 st.markdown("""
-    Welcome to our Real Estate Token Interface! Sections of this platform focuses on interactive tools and resources regarding the asset you are investing in.
-        **Real Estate Value:** An overview of the increase in the value of this home in the past ten years. 
-        **Asset Photos:** Photos of the home in real time that are available from Zillow. 
-        **Mortgage Calculator:** In relation to the value of the house, includes a repayment cycle based on your initial down payment. 
-        **Real Estate Investment Analysis:** This includes a 30 year cash flow and equity projections 
+    Welcome to our Real Estate Token Interface! Sections of this platform focuses on interactive tools and resources regarding the asset you are investing in. 
 """)
 
 # Tabs for different functionalities
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Real Estate Value", "Asset Photos", "Mortgage Calculator", "Real Estate Investment Analysis", "House Map Location"])
+tab1, tab2, tab3, tab4 = st.tabs(["Real Estate Value", "Asset Photos", "Mortgage Calculator", "Real Estate Investment Analysis"])
 
 with tab1:
     most_recent_price, investment_return_asset,  asset_price_historical, house_price_num = call_house_prices()
@@ -270,14 +269,35 @@ with tab1:
 
     st.title("Data Visualization")
 
-    # Plot data using matplotlib
-    fig, ax = plt.subplots()
-    ax.plot(asset_price_historical.index, asset_price_historical['value'])
-    ax.set_xlabel('Date')
-    ax.set_ylabel('value')
-    ax.set_title('Value over Time')
-    plt.xticks(rotation=45)
-    st.pyplot(fig)
+    # # Plot data using matplotlib
+    # fig, ax = plt.subplots()
+    # ax.plot(asset_price_historical.index, asset_price_historical['value'])
+    # ax.set_xlabel('Date')
+    # ax.set_ylabel('value')
+    # ax.set_title('Value over Time')
+    # plt.xticks(rotation=45)
+    # st.pyplot(fig)
+
+    # Assuming asset_price_historical is already defined and loaded with a DateTime index and a 'value' column
+source = ColumnDataSource(data={
+    'date': asset_price_historical.index,
+    'value': asset_price_historical['value']
+})
+
+# Create a new plot with a title and axis labels
+p = figure(title='Value over Time', x_axis_label='Date', y_axis_label='Current Property Value (USD)', x_axis_type='datetime')
+
+# Add a line renderer with legend and line thickness
+p.line(x='date', y='value', source=source, legend_label='Property Value', line_width=2)
+
+# Customizing the datetime format on x-axis
+p.xaxis.formatter = DatetimeTickFormatter(days=["%d %b %Y"], months=["%b %Y"], hours=["%d %b %Y %H:%M"])
+
+# Customizing the y-axis to display whole numbers
+p.yaxis.formatter = NumeralTickFormatter(format='0')
+
+# Streamlit function to display Bokeh chart
+st.bokeh_chart(p, use_container_width=True)
 
 with tab2:
     for width, url in photos_df.iterrows():
@@ -454,16 +474,6 @@ with tab4:
     ax.legend()
     st.pyplot(fig)
 
-
-with tab5:
-    st.title("Folium Map: House Location in the Central Valley")
-    st.write("This is an example of a Folium map embedded in a Streamlit app. This is the house's location in relation to other major cities in the Central Valley of California.")
-
-    # Generate the map
-    mymap = house_map()
-
-    # Display the map using streamlit_folium
-    st_folium(mymap, width=1000, height=600)
 
 
 
