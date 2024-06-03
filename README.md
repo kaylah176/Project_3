@@ -38,12 +38,12 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 7. Scroll down to the two contract addresses, adn hit copy, and paste that into **App.py**. This is grabbed and pasted into the ownership_token_address and real_estate_nft address contract. 
 8. In python Terminal under **App.py** type: *streamlit run App.py*
    
-### RealEstate DApp - Stage 2: Pages Available: 
+### RealEstate DApp - Stage 2, Pages & Navigation: 
 1. **Home**
 2. **NFT Tokens & Ownership**
 3. **Real Estate Token Interface**
 
-#### Navigation - Stage 3: 
+#### Navigation - Stage 
 To navigate through the app, use the sidebar on the left. Here are the main sections available:
 1. **Home:**: You are currently here. This section provides an overview and navigation instructions.
 2. **NFT Tokens and Ownership:**: This section allows you to mint an NFT that will represent the real estate property you want to invest in.
