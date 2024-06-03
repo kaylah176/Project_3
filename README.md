@@ -52,10 +52,10 @@ Here are some basic rules:
    - You can not sell to yourself. Only to other individuals in the LLC or back to the holding company itself
    - You can make updates to your contract's description once its deployed and even update the house's value.
    **Real Estate Token Interface:** This gives you interactive tools and resources regarding the asset your investing in. This includes ... 
-   - Real Estate Valuation Visualization (past 10 years)
-   - Current Asset Photos According to Zillow 
-   - Mortgate Repayments Calculator 
-   - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home 
+      - Real Estate Valuation Visualization (past 10 years)
+      - Current Asset Photos According to Zillow 
+      - Mortgate Repayments Calculator 
+      - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home 
 
 
 
