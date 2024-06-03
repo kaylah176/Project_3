@@ -32,7 +32,8 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 3. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
 4. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
 
-## Steps to deploy - Stage 1, watch the following YouTube videos in order to view compiling, and deployment of the NFT token 
+## Steps to deploy - Stage 1:
+The following videos contain detailed step by step instructions from compiling the NFT token, connecting to Metamask, deployment of the token, transacting between investors and calculating asset returns.
 1. https://youtu.be/ViRI_zeGosQ: Compiling the NFT. 
 2. https://youtu.be/bvUSPix2aBQ: Deployment NFT & Interlinking with MetaMask.
 3. https://youtu.be/j5mqZS82bkA: Enabling transactions between investors.
