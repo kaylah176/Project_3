@@ -39,8 +39,9 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 8. In python Terminal under **App.py** type: *streamlit run App.py*
    
 ### RealEstate DApp - Stage 2: 
-1. Enter property price, initial purchase price, and holding company name, description, and current property value, and hit Mint Property NFT.
-2. The sidebar menu (on the left) provides you access to current real-estate value (of the asset), as well as historical returns of the real-estate. Furthermore, a built-in mortgage calculator is built in to provide investors with quick and easy access to calculate their monthly payments for the property.
+1. **HomePage**: Introduction page into our Streamlit App. 
+2. **NFT Token & Ownership**: Contract deployment, and transferring of ownership in cryptocurrency coins. 
+3. **Real Estate Token Interface**: The sidebar menu (on the left) provides you access to current real-estate value (of the asset), as well as historical returns of the real-estate. Furthermore, a built-in mortgage calculator is built in to provide investors with quick and easy access to calculate their monthly payments for the property.
 
 #### Navigation - Stage 3: 
 To navigate through the app, use the sidebar on the left. Here are the main sections available:
