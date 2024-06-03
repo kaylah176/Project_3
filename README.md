@@ -26,19 +26,19 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 10. Time
 11. Threading
 
-### Necessary Files: 
+## Necessary Files: 
 1. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. 
 2. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price).
 3. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
 4. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
 
-### Steps to deploy - Stage 1, watch the following YouTube videos in order to view compiling, and deployment of the NFT token 
+## Steps to deploy - Stage 1, watch the following YouTube videos in order to view compiling, and deployment of the NFT token 
 1. https://youtu.be/ViRI_zeGosQ: Compiling the NFT. 
 2. https://youtu.be/bvUSPix2aBQ: Deployment NFT & Interlinking with MetaMask.
 3. https://youtu.be/j5mqZS82bkA: Enabling transactions between investors.
 4. https://youtu.be/nmHxF00BNPM: Real-Estate/Asset analysis to determine investment returns and valuation.
    
-### RealEstate DApp - Stage 2, Pages & Navigation: 
+## RealEstate DApp - Stage 2, Pages & Navigation: 
 1. **Home**
 2. **NFT Tokens & Ownership**
 3. **Real Estate Token Interface**
@@ -59,10 +59,10 @@ Here are some basic rules:
    - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home 
 
 
-### Future Applications of Software 
+## Future Applications of Software 
 Our software can be adapted to other private-equity backed assets as our platform effectively acts as a way to purchase and sell any security pegged to cashflows from the asset. This allows the software to tap into the speed, accessibility, and security of crypto-currency with the asset price pegged to a value deemed appropriate. For our example we used the Zillow Zestimates, we can also used a 'Discounted Cashflow Model' for buyers and sellers to find an appropriate pricing for the security. 
 
-### Sources: 
+## Sources: 
 1. https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
 2. https://rapidapi.com/tvhaudev/api/zillow-base1
 3. https://www.squash.io/how-to-convert-json-to-csv-in-python/
