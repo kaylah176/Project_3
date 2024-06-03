@@ -33,9 +33,9 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 
 ### Steps to deploy - Stage 1, watch the following YouTube videos in order to view compiling, and deployment of the NFT token 
 1. https://youtu.be/ViRI_zeGosQ: Compiling the NFT. 
-3. https://youtu.be/bvUSPix2aBQ: Deployment NFT & Interlinking with MetaMask 
-4. https://youtu.be/j5mqZS82bkA: Enabling transactions between investors 
-5. https://youtu.be/nmHxF00BNPM: Real-Estate/Asset analysis to determine investment returns and valuation 
+2. https://youtu.be/bvUSPix2aBQ: Deployment NFT & Interlinking with MetaMask.
+3. https://youtu.be/j5mqZS82bkA: Enabling transactions between investors.
+4. https://youtu.be/nmHxF00BNPM: Real-Estate/Asset analysis to determine investment returns and valuation.
    
 ### RealEstate DApp - Stage 2, Pages & Navigation: 
 1. **Home**
@@ -59,7 +59,7 @@ Here are some basic rules:
 
 
 ### Future Applications of Software 
-Our software can be adap
+Our software can be adapted to other private-equity backed assets as our platform can be adapted
 
 ### Sources: 
 1. https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
@@ -68,7 +68,8 @@ Our software can be adap
 5. Generative AI (ChatGPT) 
 6. https://www.youtube.com/watch?v=GwFQg8ROZfo&t=1015s
 7. Python Instructor: Edward Rees, Adjunct Professor University of San Francisco: https://www.edwardrees.info
-8. 
+8. UCB Fintech Bootcamp Tutor
+9. 
 
 
 
