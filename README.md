@@ -34,7 +34,9 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
       - Tab 1: Calls in the real-estate price, and asset returns (on a $ amount since inception).
       - Tab 2: Calls in photos from the Zillow API to view any and all images from the house. 
       - Tab 3: Contains mortgage calculator for investors to stress-test how applying leverage could impact their monthly payments.
-      - Tab 4: Contains a more in-depth sensitivity analysis to provide investors with greater ability to make an investment decision based on stress-testing: interest-rate, vacancy, insurance costs and how that could impact the cashflows from the asset. 
+      - Tab 4: Contains a more in-depth sensitivity analysis to provide investors with greater ability to make an investment decision based on stress-testing: interest-rate, vacancy, insurance costs and how that could impact the cashflows from the asset.
+   - Zillow_Location.py: Map function for potential investors to view the location of the real-estate.
+   - zillow_url: Contains the url's of the photos for additional viewing 
 4. **App.py**: Identifies property details from: Bathroom, bedroom, living area count/dimensions. 
 5. **Streamlit3.py**: Imports from Zillow_doc2.py, ganache, and gets NFT details from web3. This streamlit file allows buyers to purchase tokens, view house photos, and view the historical investment value of the house (including the house price).
 6. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
