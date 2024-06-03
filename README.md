@@ -30,15 +30,11 @@ Our process aims to cut out the bureaucracy when conducting private-equity like 
 3. **RealEstateNFT.sol**: Creates the house token to be used for transactions.
 4. **OwnershipToken.sol**: Assigns % of tokens to the shareholders (manages the OWN token). 
 
-### Steps to deploy - Stage 1: 
-1. Compile the RealEstateNFT.sol and deploy it. 
-2. Compile the OwnershipToken.sol and deploy it.
-3. Pick your injected provider as Metamask, and account.
-4. Hit transact on Remix
-5. Open up Metamask and hit import: Tokens, and paste the contract asset (OWN symbol).
-6. Hit Next and hit import. This represenets 100 OWN coi.
-7. Scroll down to the two contract addresses, adn hit copy, and paste that into **App.py**. This is grabbed and pasted into the ownership_token_address and real_estate_nft address contract. 
-8. In python Terminal under **App.py** type: *streamlit run App.py*
+### Steps to deploy - Stage 1, watch the following YouTube videos in order to view compiling, and deployment of the NFT token 
+1. https://youtu.be/ViRI_zeGosQ
+2. https://youtu.be/bvUSPix2aBQ
+3. https://youtu.be/j5mqZS82bkA
+4. https://youtu.be/nmHxF00BNPM 
    
 ### RealEstate DApp - Stage 2, Pages & Navigation: 
 1. **Home**
