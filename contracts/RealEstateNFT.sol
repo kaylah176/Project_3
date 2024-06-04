@@ -2,10 +2,9 @@
 pragma solidity ^0.5.5;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v2.5.0/contracts/token/ERC721/ERC721Full.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v2.5.0/contracts/token/ERC721/ERC721Mintable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v2.5.0/contracts/ownership/Ownable.sol";
 
-contract RealEstateNFT is ERC721Full, ERC721Mintable, Ownable {
+contract RealEstateNFT is ERC721Full, Ownable {
     struct Property {
         string propertyAddress;
         uint256 initialPurchasePrice;
@@ -25,9 +24,11 @@ contract RealEstateNFT is ERC721Full, ERC721Mintable, Ownable {
         uint256 initialPurchasePrice,
         string memory holdingCompanyName,
         string memory description,
-        uint256 currentPropertyValue
-    ) public onlyMinter {
+        uint256 currentPropertyValue,
+        string memory tokenURI // Add tokenURI parameter
+    ) public onlyOwner {
         _mint(to, tokenId);
+        _setTokenURI(tokenId, tokenURI); // Set the token URI
         properties[tokenId] = Property(
             propertyAddress,
             initialPurchasePrice,
@@ -45,5 +46,9 @@ contract RealEstateNFT is ERC721Full, ERC721Mintable, Ownable {
     function updateCurrentPropertyValue(uint256 tokenId, uint256 newValue) public {
         require(ownerOf(tokenId) == msg.sender, "Caller is not the owner");
         properties[tokenId].currentPropertyValue = newValue;
+    }
+
+    function setTokenURI(uint256 tokenId, string memory _tokenURI) public onlyOwner {
+        _setTokenURI(tokenId, _tokenURI);
     }
 }
