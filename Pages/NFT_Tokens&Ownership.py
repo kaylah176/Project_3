@@ -25,11 +25,11 @@ with open(real_estate_nft_path) as f:
     real_estate_nft_data = json.load(f)
 
 # Load the deployed OwnershipToken contract
-ownership_token_address = '0xefBdd03b439a91C8e44b71975A4C99740eF9C676'
+ownership_token_address = '0xa1b265c76d0502F8F1076262Dd23282Ebaca0b6e'
 ownership_token = w3.eth.contract(address=ownership_token_address, abi=ownership_token_data['abi'])
 
 # Load the deployed RealEstateNFT contract
-real_estate_nft_address = '0xE8b46F91A4Bb0307F6750C939f27254049733bBA'
+real_estate_nft_address = '0x211aB4061743FeCB87A2a6942412C5a64430D6F0'
 real_estate_nft = w3.eth.contract(address=real_estate_nft_address, abi=real_estate_nft_data['abi'])
 
 # Fixed ETH/USD exchange rate
