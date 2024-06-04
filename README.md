@@ -3,7 +3,7 @@
 
 Project 3: Tokenization and Real Estate is an MVP which does the following: Enables transaction of an asset as an NFT. For this Minimum-Viable-Product, we set out to enable tokenization of real-estate (pulled from Zillow RapidAPI), where investors can buy and sell assets as seamless as buying and selling securities on the stock market. 
 
-This project was completed by: Jack Richey, Kayla Hoffman, Gabriel Morano, Ravi Chailertborisuth for the UCB Fintech Bootcamp Project #3. 
+This project was completed by: Jack Richey, Kayla Hoffman, Gabriel Morano, Ravi Chailertborisuth for the UCB Fintech Bootcamp Project #3.
 
 ### The Current Problem: 
 Private-Equity transactions in general take time, energy, effort, and documentation between financial institutions to enable transition between sellers to potential buyers. In our example we create an interface with buyers and sellers can purchase tokens (effectively shares) of a house. According to [homecity.com](https://www.homecity.com/blog/how-long-does-it-take-to-buy-a-house/#:~:text=So%2C%20from%20offer%20to%20keys,in%20less%20than%2045%20days.]), closing on a house could take between 40-60 days. This process could be significantly streamlined to be faster and safer across the board. 
@@ -77,7 +77,8 @@ Here are some basic rules:
    - Real Estate Valuation Visualization (past 10 years)
    - Current Asset Photos According to Zillow 
    - Mortgate Repayments Calculator 
-   - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home 
+   - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home
+4. **Zillow Map** This gives investors access to a map linked to the ZillowAPI to show where the real-estate asset is located geogpraphically to help investors understand where their investment is located to make smarter investment decisions. Investors can gain a broader understanding of the local area prior to making an investment decision, and where buyers and sellers can get a better understanding of how the asset is priced.
 
 
 ## Future Applications of Software 
@@ -85,7 +86,8 @@ Our software can be adapted to other private-equity backed assets as our platfor
 1. **Improve available analytics for property valuation**: Buyers & Sellers can use alternatives to value real-estate (or any asset for that matter).
 2. **Open doors for creating financial instruments**: Through crypto-currency, individuals can use more complex financial instruments such as options contracts, or shorting to bet on or against price increase/decrease of a particular asset. Furthermore, this could introduce liquidity across private-equity.
 3. **Host Multiple Assets**: Investors could have accounts where they can view multiple holdings (beyond real-estate).
-4. **Exchange tokens for ETH**: Individuals could exchange the OWN tokens to Ethereum. 
+4. **Exchange tokens for ETH**: Individuals could exchange the OWN tokens to Ethereum.
+   
 
 
 ## Sources: 
