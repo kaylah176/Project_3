@@ -78,7 +78,7 @@ Here are some basic rules:
    - Current Asset Photos According to Zillow 
    - Mortgate Repayments Calculator 
    - Real Investment Analysis similar to a Pro Forma that is used to project the financial aspect of buying and leasing a home
-4. **Zillow Map** This gives investors access to a map linked to the ZillowAPI to show where the real-estate asset is located geogpraphically to help investors understand where their investment is located to make smarter investment decisions. Investors can gain a broader understanding of the local area prior to making an investment decision, and where buyers and sellers can get a better understanding of how the asset is priced.
+4. **Zillow Locations** This gives investors access to a map linked to the ZillowAPI to show where the real-estate asset is located geogpraphically to help investors understand where their investment is located to make smarter investment decisions. Investors can gain a broader understanding of the local area prior to making an investment decision, and where buyers and sellers can get a better understanding of how the asset is priced.
 
 
 ## Future Applications of Software 
